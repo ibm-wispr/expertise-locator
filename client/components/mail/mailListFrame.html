@@ -1,0 +1,16 @@
+<div layout="row" layout-fill>
+  <!-- add another column to the end of this row.  If added to the end, it will appear on the right side.  We only show this if there are experts returned.  Also, the max size of this column is 20% of the entire row -->
+  <div ng-show="ctrl.experts.length > 0" layout="column"  flex="20">
+    <md-card ng-repeat="expert in ctrl.experts" ng-click="ctrl.emailExpert(expert.name, expert.mail)">
+      <md-card-header >
+        <md-card-avatar>
+          <img class="md-user-avatar" src="{{expert.photoURL}}">
+        </md-card-avatar>
+        <md-card-header-text>
+          <span class="md-title">{{expert.name}}</span>
+          <span class="md-subhead">{{expert.mail}}</span>
+        </md-card-header-text>
+      </md-card-header>
+    </md-card>
+  </div>
+</div>
